@@ -86,11 +86,10 @@ public class BoardController {
         return resultMap;
     }
 
-    @PostMapping("delete")
-    public HashMap<String, Object> delete(@RequestBody int id) {
-        HashMap<String, Object> resultMap = new HashMap<>();
-        System.out.println(id);
+    @GetMapping("delete/{id}")
+    public ResponseEntity<Void> delete(@PathVariable int id) {
+        BOARD_SERVICE.delete(id);
 
-        return resultMap;
+        return ResponseEntity.ok().build();
     }
 }

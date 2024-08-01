@@ -42,4 +42,8 @@ public class BoardService {
     public void update(BoardDTO board) {
         SESSION.update(NAMESPACE + ".update", board);
     }
+
+    public void delete(int id) {
+        SESSION.delete(NAMESPACE + ".delete", id);
+    }
 }
